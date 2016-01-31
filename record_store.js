@@ -35,7 +35,9 @@ RecordStore.prototype = {
     }
     return value;
   },
-
+  reportFinances: function(){
+    return "Cash Balance: £" + this.balance + ", Inventory Value: £" + this.inventoryValue();
+  },
 }
 
 

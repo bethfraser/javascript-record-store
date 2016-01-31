@@ -63,4 +63,14 @@ describe('Record Store', function(){
     expect(store.inventoryValue()).to.equal(28.96);
   });
 
+  it('should be able to report on finances', function(){
+    var store = new RecordStore("Rockin Records", "Chicago");
+    var record = new Record("Green Day", "American Idiot", 4.99, 1);
+    var record2 = new Record("Pink Floyd", "The Wall", 7.99, 3);
+    store.addRecord(record);
+    store.addRecord(record2);
+    store.sellRecord(record2);
+    expect(store.reportFinances()).to.equal("Cash Balance: £7.99, Inventory Value: £20.97");
+  });
+
 });
