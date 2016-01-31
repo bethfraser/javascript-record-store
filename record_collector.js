@@ -8,9 +8,14 @@ var RecordCollector = function(name){
 
 RecordCollector.prototype = {
   buyRecord: function(record, store){
+    if(this.cash >= record.price){
     this.collection.push(record);
     store.sellRecord(record);
     this.cash -= record.price;
+    }
+    else {
+      console.log("You do not have enough money for that record!")
+    }
   },
   sellRecord: function(record, store){
     store.records.push(record);

@@ -129,6 +129,16 @@ describe("Record Collector", function(){
     expect(collector.collection).to.deep.equal([]);
   });
 
+  it('can only buy a record if they have enough money', function(){
+    var store = new RecordStore("Rockin Records", "Chicago");
+    var record = new Record("Green Day", "American Idiot", 4.99, 1);
+    var collector = new RecordCollector("Nigel");
+    store.addRecord(record);
+    collector.cash = 2.99;
+    collector.buyRecord(record, store);
+    expect(collector.collection).to.deep.equal([]);
+  });
+
 
 
 });
