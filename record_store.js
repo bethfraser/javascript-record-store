@@ -16,7 +16,6 @@ RecordStore.prototype = {
     for(record of this.records){
       list += record.artist + ": " + record.title + ", £" + record.price + " | Copies: "+ record.copies + "\n";
     }
-    console.log(list);
     return list;
   },
   sellRecord: function(record){
